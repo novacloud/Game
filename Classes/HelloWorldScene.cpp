@@ -55,6 +55,7 @@ bool HelloWorld::init()
     // create and initialize a label
     
     auto label = LabelTTF::create("Hello World", "Arial", 24);
+    // 村方コメント追加
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,

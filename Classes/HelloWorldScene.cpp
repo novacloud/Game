@@ -54,7 +54,7 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto label = LabelTTF::create("Hello World", "Arial", 24);
+    label = LabelTTF::create("Hello World", "Arial", 24);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
@@ -62,17 +62,73 @@ bool HelloWorld::init()
 
     // add the label as a child to this layer
     this->addChild(label, 1);
-
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    
+    
+    sprite = Sprite::create("target.jpg");
+    
+    //位置を設定
+    sprite->setPosition(Vec2(100,100));
 
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    this->addChild(sprite);
+    
+    this->schedule(schedule_selector(HelloWorld::move));
+    
+    
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(true);
+    
+    // タッチイベント　ラムダ式
+    listener->onTouchBegan = [&](Touch* touch, Event* event) {
+        
+        Point point = touch->getLocation();
+        
+        float width = sprite->getContentSize().width;
+        float height = sprite->getContentSize().height;
+        
+        auto rect = Rect(sprite->getPositionX() - width/2, sprite->getPositionY() - height/2, width, height );
+        
+        // クリックエリアをチェックする。
+        if (rect.containsPoint(point))
+        {
+            score += 100;
+            std::string str = StringUtils::format("%i", score);
+            
+            label->setString(str);
+        }
+
+        
+        return true;
+    };
+    
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, sprite);
     
     return true;
+}
+
+
+void HelloWorld::move(float delta)
+{
+    //これが連続することで、なめらかに動いているように見えます。
+    sprite->setPosition(Point(sprite->getPositionX() + moveX, sprite->getPositionY() + moveY));
+    
+    if(sprite->getPositionX() < 0) {
+        moveX = -moveX;
+    }
+    
+    if(sprite->getPositionX() > 1136) {
+        moveX = -moveX;
+    }
+    
+    if(sprite->getPositionY() < 0) {
+        moveY = -moveY;
+    }
+    
+    if(sprite->getPositionY() > 640) {
+        moveY = -moveY;
+    }
+    
+    
 }
 
 

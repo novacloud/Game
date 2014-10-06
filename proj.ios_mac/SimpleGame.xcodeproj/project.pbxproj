@@ -69,6 +69,15 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		DE5EB0FD19DFE9DA009067EF /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5EB0FA19DFE9DA009067EF /* bullet.png */; };
+		DE5EB0FE19DFE9DA009067EF /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5EB0FB19DFE9DA009067EF /* enemy.png */; };
+		DE5EB0FF19DFE9DA009067EF /* haka.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5EB0FC19DFE9DA009067EF /* haka.png */; };
+		DE7B0C4E19C8583F00D3130F /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C4D19C8583F00D3130F /* GameOverScene.cpp */; };
+		DE7B0C5419C8585A00D3130F /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5319C8585A00D3130F /* TitleScene.cpp */; };
+		DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5519CCD63500D3130F /* Enemy.cpp */; };
+		DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5819D19ED200D3130F /* Player.cpp */; };
+		DE7B0C5D19D1A58D00D3130F /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5B19D1A58D00D3130F /* Stage.cpp */; };
+		DE7B0C6019D1A75C00D3130F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */; };
 		DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB12EBA19A37DA4009D47CA /* target.jpg */; };
 /* End PBXBuildFile section */
 
@@ -268,6 +277,21 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		DE5EB0FA19DFE9DA009067EF /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
+		DE5EB0FB19DFE9DA009067EF /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
+		DE5EB0FC19DFE9DA009067EF /* haka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haka.png; sourceTree = "<group>"; };
+		DE7B0C4D19C8583F00D3130F /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
+		DE7B0C5119C8584900D3130F /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../Classes/GameOverScene.h; sourceTree = "<group>"; };
+		DE7B0C5219C8585300D3130F /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TitleScene.h; path = ../Classes/TitleScene.h; sourceTree = "<group>"; };
+		DE7B0C5319C8585A00D3130F /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TitleScene.cpp; path = ../Classes/TitleScene.cpp; sourceTree = "<group>"; };
+		DE7B0C5519CCD63500D3130F /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		DE7B0C5619CCD63500D3130F /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		DE7B0C5819D19ED200D3130F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		DE7B0C5919D19ED200D3130F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		DE7B0C5B19D1A58D00D3130F /* Stage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stage.cpp; sourceTree = "<group>"; };
+		DE7B0C5C19D1A58D00D3130F /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
+		DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		DE7B0C5F19D1A75C00D3130F /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		DEB12EBA19A37DA4009D47CA /* target.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = target.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -338,10 +362,22 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DE7B0C5319C8585A00D3130F /* TitleScene.cpp */,
+				DE7B0C5219C8585300D3130F /* TitleScene.h */,
+				DE7B0C5119C8584900D3130F /* GameOverScene.h */,
+				DE7B0C4D19C8583F00D3130F /* GameOverScene.cpp */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
+				DE7B0C5519CCD63500D3130F /* Enemy.cpp */,
+				DE7B0C5619CCD63500D3130F /* Enemy.h */,
+				DE7B0C5819D19ED200D3130F /* Player.cpp */,
+				DE7B0C5919D19ED200D3130F /* Player.h */,
+				DE7B0C5B19D1A58D00D3130F /* Stage.cpp */,
+				DE7B0C5C19D1A58D00D3130F /* Stage.h */,
+				DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */,
+				DE7B0C5F19D1A75C00D3130F /* GameScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -457,6 +493,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE5EB0FA19DFE9DA009067EF /* bullet.png */,
+				DE5EB0FB19DFE9DA009067EF /* enemy.png */,
+				DE5EB0FC19DFE9DA009067EF /* haka.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				DEB12EBA19A37DA4009D47CA /* target.jpg */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
@@ -631,8 +670,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				DE5EB0FD19DFE9DA009067EF /* bullet.png in Resources */,
+				DE5EB0FE19DFE9DA009067EF /* enemy.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				DE5EB0FF19DFE9DA009067EF /* haka.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
@@ -671,11 +713,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				DE7B0C5D19D1A58D00D3130F /* Stage.cpp in Sources */,
+				DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				DE7B0C4E19C8583F00D3130F /* GameOverScene.cpp in Sources */,
+				DE7B0C6019D1A75C00D3130F /* GameScene.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
+				DE7B0C5419C8585A00D3130F /* TitleScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

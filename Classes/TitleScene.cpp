@@ -7,7 +7,7 @@
 //
 
 #include "TitleScene.h"
-#include "HelloWorldScene.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -80,7 +80,7 @@ bool TitleScene::init()
     listener->onTouchBegan = [&](Touch* touch, Event* event) {
         
         // シーン移動
-        Director::getInstance()->replaceScene(TransitionFade::create(1.0f, HelloWorld::createScene(), Color3B::WHITE));
+        Director::getInstance()->replaceScene(TransitionFade::create(1.0f, GameScene::createScene(), Color3B::WHITE));
         
         return true;
     };

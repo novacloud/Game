@@ -9,23 +9,33 @@
 #ifndef __SimpleGame__Player__
 #define __SimpleGame__Player__
 
+#include <iostream>
 #include <cocos2d.h>
+
+USING_NS_CC;
 
 class Player
 {
 private:
+    Player();
+    static Player* singleton;
+    
     int     score;
     int     life;
-    int     power;
-    int     bulletMax;
-    int     bulletRest;
     
-    Player();
+    Vector<Sprite *> vecWeponSprite;
+    std::string weponImage;
+    int     weponPower;
+    int     weponMax;
+    int     weponRest;
 
 public:
-    static Player* getInstance();
-    void init();
-    void reload();
+    static Player*  getInstance();
+    void    init(Layer *layer);
+    bool    attack();
+    void    reload();
+    std::string getWeponImage();
+    int     getWeponPower();
 };
 
 #endif /* defined(__SimpleGame__Player__) */

@@ -14,34 +14,33 @@ USING_NS_CC;
 
 Stage::Stage()
 {
+    popData = new PopData();
 }
 
-void Stage::makeEnemy(float time)
+void Stage::createPopObject(Layer *layer, float time)
 {
-    if( time > enemyPopupTime )
+    for( int i = 0; i < popData->getPopMax(); i++)
     {
-        if( enemyPopFlag == 0 )
+        if( popData->getPopFlag(i) )
+            continue;
+        
+        if( time > popData->getPopTime(i) )
         {
-            auto enemy = new Enemy();
-            auto sprite = Sprite::create(enemy->getImageFileName());
-            sprite->setPosition(Vec2(enemyPopupX, enemyPopupY));
-            sprite->setOpacity(0);
-            enemy->registAction(sprite);
+            // POP時刻になった
             
-            vecSpriteEnemy.pushBack(sprite);
-            
-            enemyPopFlag = 1;
+            if( popData->getPopType(i) == 0 )
+            {
+                // 敵POP
+                auto enemy = new Enemy();
+                auto sprite = Sprite::create(enemy->getImageFileName());
+                sprite->setPosition(Vec2(popData->getPopPointX(i), popData->getPopPointY(i)));
+                sprite->setOpacity(0);
+                enemy->registAction(sprite);
+                
+                layer->addChild(sprite);
+                
+                popData->setPopFlagTrue(i);
+            }
         }
     }
-}
-
-cocos2d::Sprite* Stage::getNewEnemySprite()
-{
-    if( vecSpriteEnemy.empty() )
-        return NULL;
-    
-    auto sprite = vecSpriteEnemy.back();
-    vecSpriteEnemy.popBack();
-    
-    return sprite;
 }

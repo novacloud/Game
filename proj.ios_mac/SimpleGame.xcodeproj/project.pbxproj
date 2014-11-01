@@ -78,6 +78,9 @@
 		DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5819D19ED200D3130F /* Player.cpp */; };
 		DE7B0C5D19D1A58D00D3130F /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5B19D1A58D00D3130F /* Stage.cpp */; };
 		DE7B0C6019D1A75C00D3130F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */; };
+		DEAE50D619FCCD08009503C0 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAE50D519FCCD08009503C0 /* background.png */; };
+		DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50D719FD20AB009503C0 /* PopData.cpp */; };
+		DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50DD1A04D47C009503C0 /* Wepon.cpp */; };
 		DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB12EBA19A37DA4009D47CA /* target.jpg */; };
 /* End PBXBuildFile section */
 
@@ -292,6 +295,11 @@
 		DE7B0C5C19D1A58D00D3130F /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
 		DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		DE7B0C5F19D1A75C00D3130F /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		DEAE50D519FCCD08009503C0 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		DEAE50D719FD20AB009503C0 /* PopData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopData.cpp; path = ../Classes/PopData.cpp; sourceTree = "<group>"; };
+		DEAE50D819FD20AB009503C0 /* PopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopData.h; path = ../Classes/PopData.h; sourceTree = "<group>"; };
+		DEAE50DD1A04D47C009503C0 /* Wepon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wepon.cpp; path = ../Classes/Wepon.cpp; sourceTree = "<group>"; };
+		DEAE50DE1A04D47C009503C0 /* Wepon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wepon.h; path = ../Classes/Wepon.h; sourceTree = "<group>"; };
 		DEB12EBA19A37DA4009D47CA /* target.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = target.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -378,6 +386,10 @@
 				DE7B0C5C19D1A58D00D3130F /* Stage.h */,
 				DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */,
 				DE7B0C5F19D1A75C00D3130F /* GameScene.h */,
+				DEAE50D719FD20AB009503C0 /* PopData.cpp */,
+				DEAE50D819FD20AB009503C0 /* PopData.h */,
+				DEAE50DD1A04D47C009503C0 /* Wepon.cpp */,
+				DEAE50DE1A04D47C009503C0 /* Wepon.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -493,6 +505,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DEAE50D519FCCD08009503C0 /* background.png */,
 				DE5EB0FA19DFE9DA009067EF /* bullet.png */,
 				DE5EB0FB19DFE9DA009067EF /* enemy.png */,
 				DE5EB0FC19DFE9DA009067EF /* haka.png */,
@@ -670,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				DEAE50D619FCCD08009503C0 /* background.png in Resources */,
 				DE5EB0FD19DFE9DA009067EF /* bullet.png in Resources */,
 				DE5EB0FE19DFE9DA009067EF /* enemy.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
@@ -714,9 +728,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */,
+				DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DE7B0C5D19D1A58D00D3130F /* Stage.cpp in Sources */,
 				DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */,
+				DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -817,7 +833,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -848,7 +864,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

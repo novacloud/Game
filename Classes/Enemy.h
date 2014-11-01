@@ -15,6 +15,7 @@ class Enemy
 {
 private:
     int     life;
+    bool    existFlag;
     std::string imageFileName;
     
 public:

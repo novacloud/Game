@@ -10,21 +10,19 @@
 #define __SimpleGame__Stage__
 
 #include <cocos2d.h>
+#include "PopData.h"
+
+USING_NS_CC;
 
 class Stage
 {
 private:
-    cocos2d::Vector<cocos2d::Sprite *> vecSpriteEnemy;
-    int enemyPopupTime = 3;
-    int enemyPopupX = 500;
-    int enemyPopupY = 800;
-    int enemyPopFlag = 0;
+    PopData *popData;
     
 public:
     Stage();
-    
-    void makeEnemy(float time);
-    cocos2d::Sprite* getNewEnemySprite();
+    void initStage();
+    void createPopObject(Layer *layer, float time);
 };
 
 #endif /* defined(__SimpleGame__Stage__) */

@@ -39,17 +39,21 @@ bool GameScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    auto _bg = LayerColor::create(Color4B::WHITE, visibleSize.width, visibleSize.height);
+    this->addChild(_bg, 0);
+    
+    auto spriteBackground = Sprite::create("background.png");
+    spriteBackground->setPosition(Vec2(origin.x + visibleSize.width/2,
+                                       origin.y + visibleSize.height/2));
+    this->addChild(spriteBackground, 0);
+    
     updateTime = 0;
-    
-    auto spriteReload = Sprite::create("haka.png");
-    spriteReload->setPosition(Vec2(100, 200));
-    
-    this->addChild(spriteReload);
-    /*
+
     // プレイヤー初期化
     auto player = Player::getInstance();
-    player->init();
-    */
+    player->init(this);
+    
+    
     // ステージを構成
     stage = new Stage();
     
@@ -62,16 +66,13 @@ bool GameScene::init()
 void GameScene::update(float delta)
 {
     updateTime += delta;
-    log("time = %f", updateTime);
+    //log("time = %f", updateTime);
     
-    stage->makeEnemy(updateTime);
-    
-    Sprite *spriteEnemy;
-    
-    while( (spriteEnemy = stage->getNewEnemySprite()) != NULL )
-        this->addChild(spriteEnemy);
-    
-    if( updateTime > 30 )
+    // POPオプジェクと作成
+    stage->createPopObject(this, updateTime);
+   
+    // 
+    if( updateTime > 60 )
     {
         Director::getInstance()->replaceScene(TransitionCrossFade::create(1.0f, GameOverScene::createScene()));
     }

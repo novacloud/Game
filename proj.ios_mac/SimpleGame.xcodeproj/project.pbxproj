@@ -76,12 +76,12 @@
 		DE7B0C5419C8585A00D3130F /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5319C8585A00D3130F /* TitleScene.cpp */; };
 		DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5519CCD63500D3130F /* Enemy.cpp */; };
 		DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5819D19ED200D3130F /* Player.cpp */; };
-		DE7B0C5D19D1A58D00D3130F /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5B19D1A58D00D3130F /* Stage.cpp */; };
 		DE7B0C6019D1A75C00D3130F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */; };
 		DEAE50D619FCCD08009503C0 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAE50D519FCCD08009503C0 /* background.png */; };
 		DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50D719FD20AB009503C0 /* PopData.cpp */; };
 		DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50DD1A04D47C009503C0 /* Wepon.cpp */; };
 		DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB12EBA19A37DA4009D47CA /* target.jpg */; };
+		DEEF52AC1A0E1C7000FC9894 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEEF52AB1A0E1C7000FC9894 /* title.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,8 +291,6 @@
 		DE7B0C5619CCD63500D3130F /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		DE7B0C5819D19ED200D3130F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		DE7B0C5919D19ED200D3130F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		DE7B0C5B19D1A58D00D3130F /* Stage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stage.cpp; sourceTree = "<group>"; };
-		DE7B0C5C19D1A58D00D3130F /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
 		DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		DE7B0C5F19D1A75C00D3130F /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		DEAE50D519FCCD08009503C0 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -301,6 +299,7 @@
 		DEAE50DD1A04D47C009503C0 /* Wepon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wepon.cpp; path = ../Classes/Wepon.cpp; sourceTree = "<group>"; };
 		DEAE50DE1A04D47C009503C0 /* Wepon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wepon.h; path = ../Classes/Wepon.h; sourceTree = "<group>"; };
 		DEB12EBA19A37DA4009D47CA /* target.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = target.jpg; sourceTree = "<group>"; };
+		DEEF52AB1A0E1C7000FC9894 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,8 +381,6 @@
 				DE7B0C5619CCD63500D3130F /* Enemy.h */,
 				DE7B0C5819D19ED200D3130F /* Player.cpp */,
 				DE7B0C5919D19ED200D3130F /* Player.h */,
-				DE7B0C5B19D1A58D00D3130F /* Stage.cpp */,
-				DE7B0C5C19D1A58D00D3130F /* Stage.h */,
 				DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */,
 				DE7B0C5F19D1A75C00D3130F /* GameScene.h */,
 				DEAE50D719FD20AB009503C0 /* PopData.cpp */,
@@ -505,6 +502,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DEEF52AB1A0E1C7000FC9894 /* title.jpg */,
 				DEAE50D519FCCD08009503C0 /* background.png */,
 				DE5EB0FA19DFE9DA009067EF /* bullet.png */,
 				DE5EB0FB19DFE9DA009067EF /* enemy.png */,
@@ -691,6 +689,7 @@
 				DE5EB0FF19DFE9DA009067EF /* haka.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */,
+				DEEF52AC1A0E1C7000FC9894 /* title.jpg in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -730,7 +729,6 @@
 				DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */,
 				DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				DE7B0C5D19D1A58D00D3130F /* Stage.cpp in Sources */,
 				DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */,
 				DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,

@@ -10,14 +10,13 @@
 #define __SimpleGame__PopData__
 
 #include <cocos2d.h>
+#include "Enemy.h"
 
 class PopData
 {
 private:
     int popMax;
     std::vector<int> vecPopTime;
-    std::vector<int> vecPopPointX;
-    std::vector<int> vecPopPointY;
     std::vector<int> vecPopType;
     std::vector<bool> vecPopFlag;
 
@@ -25,8 +24,6 @@ public:
     PopData();
     int getPopMax();
     int getPopTime( int num );
-    int getPopPointX( int num );
-    int getPopPointY( int num );
     int getPopType( int num );
     bool getPopFlag( int num );
     void setPopFlagTrue( int num );

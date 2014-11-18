@@ -10,18 +10,32 @@
 #define __SimpleGame__Wepon__
 
 #include <cocos2d.h>
+#include <math.h>
 
 USING_NS_CC;
 
-class Wepon{
+class Wepon : public Sprite
+{
+public:
+    enum WeponType
+    {
+        weponType1,
+        weponType2
+    };
+    
 private:
-    int     power;
-    int     max;
+    WeponType   weponType;
+    int         power;
     
 public:
-    Wepon();
-    int     getPower();
-    int     getMax();
+    
+    Wepon(WeponType type);
+    static Wepon* create(WeponType type, Vec2 touch);
+    virtual bool init();
+    std::string getImageFileName();
+    void setInitPosision();
+    void setAction(Vec2 touch);
+    void setData();
 };
 
 #endif /* defined(__SimpleGame__Wepon__) */

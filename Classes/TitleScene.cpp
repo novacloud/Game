@@ -39,6 +39,12 @@ bool TitleScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    auto spriteBackground = Sprite::create("title.jpg");
+    spriteBackground->setPosition(Vec2(origin.x + visibleSize.width/2,
+                                       origin.y + visibleSize.height/2));
+    spriteBackground->setScale( 0.2f, 0.2f );
+    this->addChild(spriteBackground, 0);
+    
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
@@ -63,7 +69,7 @@ bool TitleScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    label = LabelTTF::create("タイトル", "Arial", 40);
+    label = LabelTTF::create("妖怪タッチ", "Arial", 40);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,

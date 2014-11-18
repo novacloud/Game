@@ -8,6 +8,8 @@
 
 #include "GameScene.h"
 #include "GameOverScene.h"
+#include "Enemy.h"
+#include "Wepon.h"
 
 USING_NS_CC;
 
@@ -47,16 +49,41 @@ bool GameScene::init()
                                        origin.y + visibleSize.height/2));
     this->addChild(spriteBackground, 0);
     
-    updateTime = 0;
+    // ステージを構成
+    popData = new PopData();
 
     // プレイヤー初期化
     auto player = Player::getInstance();
     player->init(this);
     
     
-    // ステージを構成
-    stage = new Stage();
     
+    
+    // タッチイベントの登録
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(true);
+    listener->onTouchBegan = [&](Touch* touch, Event* event)
+    {
+        auto player = Player::getInstance();
+        
+        if( player->attack() )
+        {
+            // 攻撃モーション
+            auto location = touch->getLocation();
+            auto wepon = Wepon::create(Wepon::weponType1, location);
+            if( wepon )
+            {
+                this->addChild(wepon, kZOrderWepon, kTagWepon);
+            }
+            
+            return true;
+        }
+        
+        return false;
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    updateTime = 0;
     this->scheduleUpdate();
     
     return true;
@@ -68,8 +95,25 @@ void GameScene::update(float delta)
     updateTime += delta;
     //log("time = %f", updateTime);
     
-    // POPオプジェクと作成
-    stage->createPopObject(this, updateTime);
+    // POP OBJECT作成
+    createPopObject(updateTime);
+    
+    
+    // Object動作
+    Vector<Node*> children = getChildren();
+    
+    for( auto child: children )
+    {
+        if( child->getTag() == kTagEnemy )
+        {
+            
+        }
+        
+        if( child->getTag() == kTagWepon )
+        {
+            
+        }
+    }
    
     // 
     if( updateTime > 60 )
@@ -77,4 +121,31 @@ void GameScene::update(float delta)
         Director::getInstance()->replaceScene(TransitionCrossFade::create(1.0f, GameOverScene::createScene()));
     }
     
+}
+
+
+void GameScene::createPopObject(float time)
+{
+    for( int i = 0; i < popData->getPopMax(); i++)
+    {
+        if( popData->getPopFlag(i) )
+            continue;
+        
+        if( time > popData->getPopTime(i) )
+        {
+            // POP時刻になった
+            
+            if( popData->getPopType(i) == 0 )
+            {
+                // 敵POP
+                auto enemy = Enemy::create( Enemy::enemyType1 );
+                if( enemy )
+                {
+                    this->addChild(enemy, kZOrderEnemy, kTagEnemy);
+                }
+                
+                popData->setPopFlagTrue(i);
+            }
+        }
+    }
 }

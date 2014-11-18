@@ -11,28 +11,29 @@
 
 #include <cocos2d.h>
 
-class Enemy
+USING_NS_CC;
+
+class Enemy : public Sprite
 {
+public:
+    enum EnemyType
+    {
+        enemyType1,
+        enemyType2
+    };
+    
 private:
+    EnemyType enemyType;
     int     life;
-    bool    existFlag;
-    std::string imageFileName;
     
 public:
-    /** コンストラクタ */
-    Enemy();
-    
-    /** ファイル名取得 */
+    Enemy(EnemyType type);
+    static Enemy* create(EnemyType type);
+    virtual bool init();
     std::string getImageFileName();
-    
-    /** アクションの登録 */
-    void registAction(cocos2d::Sprite *sprite);
-    
-    /** タッチイベント登録 */
-    void touchEvent();
-    
-private:
-    
+    void setInitPosision();
+    void setAction();
+    void setData();
 };
 
 #endif /* defined(__SimpleGame__Enemy__) */

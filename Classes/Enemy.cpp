@@ -7,80 +7,82 @@
 //
 
 #include "Enemy.h"
-#include "Player.h"
 
 USING_NS_CC;
 
-Enemy::Enemy()
+Enemy::Enemy(EnemyType type)
+: enemyType(type)
 {
-    life = 5;
-    existFlag = true;
-    imageFileName = "enemy.png";
+}
+
+Enemy* Enemy::create(EnemyType type)
+{
+    Enemy *enemy = new Enemy(type);
+    
+    if( enemy && enemy->init() )
+    {
+        enemy->setInitPosision();
+        enemy->setAction();
+        enemy->setData();
+        return enemy;
+    }
+    
+    CC_SAFE_DELETE(enemy);
+    return NULL;
+}
+
+bool Enemy::init()
+{
+    if (!Sprite::initWithFile(getImageFileName()))
+    {
+        return false;
+    }
+    
+    return true;
 }
 
 std::string Enemy::getImageFileName()
 {
-    return imageFileName;
+    if( enemyType == enemyType1 )
+    {
+        return "enemy.png";
+    }
+    
+    return "enemy.png";
 }
 
-void Enemy::registAction(cocos2d::Sprite *sprite)
+void Enemy::setInitPosision()
 {
-    Size visibleSize = Director::getInstance()->getVisibleSize();
- 
-    // 出現・移動イベントの登録
-    auto fadeIn = FadeIn::create(0.5f);
-    auto move = MoveTo::create(3.0f, Vec2(visibleSize.width/2, 100));
-    auto sequence = Sequence::create(fadeIn, move, NULL);
-    sprite->runAction(sequence);
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 posision;
     
-    
-    // タッチイベントの登録
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->setSwallowTouches(true);
-    listener->onTouchBegan = [&](Touch* touch, Event* event)
+    if( enemyType == enemyType1 )
     {
-        auto target = (Sprite*)event->getCurrentTarget();
-        auto targetBox = target->getBoundingBox();
-        auto location = touch->getLocation();
-        
-        // タッチ位置判定
-        if( targetBox.containsPoint(location) )
-        {
-            auto player = Player::getInstance();
-            
-            // 攻撃判定
-            if( player->attack() )
-            {
-                // 攻撃エフェクト表示
-                auto sprite = Sprite::create(player->getWeponImage());
-                sprite->setPosition(location);
-                Director::getInstance()->getRunningScene()->addChild(sprite);
-                
-                auto scaleTo = ScaleTo::create( 0.2f, 2.0f );
-                auto fadeOut = FadeOut::create( 0.2f );
-                auto sequence = Sequence::create( scaleTo, fadeOut, NULL );
-                sprite->runAction(sequence);
-                
-                if( life > 0 )
-                {
-                    life -= player->getWeponPower();
-                }
-            
-                if( life <= 0 )
-                {
-                    if( existFlag )
-                    {
-                        auto fadeOut = FadeOut::create(0.5f);
-                        target->runAction(fadeOut);
-                        existFlag = false;
-                    }
-                }
-            }
-            
-            return true;
-        }
-        
-        return false;
-    };
-    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, sprite);
+        posision = Vec2( rand() % (int)visibleSize.width, visibleSize.height - 50 );
+    }
+    
+    setPosition(posision);
+}
+
+void Enemy::setAction()
+{
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    
+    //移動アクションを生成
+    if( enemyType == enemyType1 )
+    {
+        auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
+        auto remove = RemoveSelf::create();
+        auto seq = Sequence::create(move, remove, NULL);
+    
+        runAction(seq);
+    }
+}
+
+void Enemy::setData()
+{
+    if( enemyType == enemyType1 )
+    {
+        life = 2;
+    }
 }

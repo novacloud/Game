@@ -76,32 +76,6 @@ void Player::init(Layer *layer)
         
         vecWeponSprite.pushBack(sprite);
     }
-    
-    // タッチイベントの登録
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->setSwallowTouches(true);
-    listener->onTouchBegan = [&](Touch* touch, Event* event)
-    {
-        if( attack() )
-        {
-            // 攻撃モーション
-            auto location = touch->getLocation();
-            auto sprite = Sprite::create(weponImage);
-            sprite->setPosition(location);
-            sprite->setScale(2.0f, 2.0f);
-            Director::getInstance()->getRunningScene()->addChild(sprite, 1);
-            
-            auto scaleTo = ScaleTo::create(0.1f, 0.5f);
-            auto fadeOut = FadeOut::create( 0.1f );
-            auto sequence = Sequence::create(scaleTo, fadeOut, NULL);
-            sprite->runAction(sequence);
-            
-            return true;
-        }
-
-        return false;
-    };
-    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, layer);
 }
 
 bool Player::attack()

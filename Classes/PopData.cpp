@@ -15,20 +15,13 @@ PopData::PopData()
     popMax = 8;
     
     int time;
-    int x;
-    int y;
-    
-    Size visibleSize = Director::getInstance()->getVisibleSize();
     
     for( int i = 0; i < popMax; i++ )
     {
-        time = rand() % 60;
-        x = rand() % (int)visibleSize.width;
-        y = visibleSize.height - 50;
+        time = rand() % 30;
+
         
         vecPopTime.push_back(time);
-        vecPopPointX.push_back(x);
-        vecPopPointY.push_back(y);
         vecPopType.push_back(0);
         vecPopFlag.push_back(false);
     }
@@ -42,16 +35,6 @@ int PopData::getPopMax()
 int PopData::getPopTime( int num )
 {
     return vecPopTime.at(num);
-}
-
-int PopData::getPopPointX( int num )
-{
-    return vecPopPointX.at(num);
-}
-
-int PopData::getPopPointY( int num )
-{
-    return vecPopPointY.at(num);
 }
 
 int PopData::getPopType( int num )

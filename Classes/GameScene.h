@@ -12,13 +12,33 @@
 #include "cocos2d.h"
 #include "GameOverScene.h"
 #include "Player.h"
-#include "Stage.h"
+#include "PopData.h"
+
+
+enum kZOrder
+{
+    kZOrderBackground,
+    kZOrderPlayer,
+    kZOrderWepon,
+    kZOrderEnemy,
+    kZOrderItem
+};
+
+enum kTag
+{
+    kTagBackgound,
+    kTagPlayer,
+    kTagWepon,
+    kTagEnemy,
+    kTagItem
+};
+
 
 class GameScene : public cocos2d::Layer
 {
 public:
     float updateTime;
-    Stage *stage;
+    PopData *popData;
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
@@ -28,6 +48,8 @@ public:
     
     // schedul update
     void update(float delta);
+    
+    void createPopObject(float time);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);

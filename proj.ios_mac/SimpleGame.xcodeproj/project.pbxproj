@@ -81,9 +81,7 @@
 		DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50D719FD20AB009503C0 /* PopData.cpp */; };
 		DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50DD1A04D47C009503C0 /* Wepon.cpp */; };
 		DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB12EBA19A37DA4009D47CA /* target.jpg */; };
-<<<<<<< HEAD
 		DEEF52AC1A0E1C7000FC9894 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEEF52AB1A0E1C7000FC9894 /* title.jpg */; };
-=======
 		E3293BC81A1A1A9B0097011A /* fusuma.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BBE1A1A1A9B0097011A /* fusuma.png */; };
 		E3293BC91A1A1A9B0097011A /* hitotsume.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BBF1A1A1A9B0097011A /* hitotsume.png */; };
 		E3293BCA1A1A1A9B0097011A /* ittan.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC01A1A1A9B0097011A /* ittan.png */; };
@@ -94,7 +92,6 @@
 		E3293BCF1A1A1A9B0097011A /* nurari.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC51A1A1A9B0097011A /* nurari.png */; };
 		E3293BD01A1A1A9B0097011A /* nurikabe.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC61A1A1A9B0097011A /* nurikabe.png */; };
 		E3293BD11A1A1A9B0097011A /* sazae.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC71A1A1A9B0097011A /* sazae.png */; };
->>>>>>> ba9f97d67a22a62b5c8aac0cce6dd0d1b381fdf7
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -528,11 +525,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				DEEF52AB1A0E1C7000FC9894 /* title.jpg */,
-=======
 				E3293BBD1A1A1A9B0097011A /* enemy */,
->>>>>>> ba9f97d67a22a62b5c8aac0cce6dd0d1b381fdf7
 				DEAE50D519FCCD08009503C0 /* background.png */,
 				DE5EB0FA19DFE9DA009067EF /* bullet.png */,
 				DE5EB0FB19DFE9DA009067EF /* enemy.png */,

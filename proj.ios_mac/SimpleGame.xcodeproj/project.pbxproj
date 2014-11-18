@@ -309,9 +309,7 @@
 		DEAE50DD1A04D47C009503C0 /* Wepon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wepon.cpp; path = ../Classes/Wepon.cpp; sourceTree = "<group>"; };
 		DEAE50DE1A04D47C009503C0 /* Wepon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wepon.h; path = ../Classes/Wepon.h; sourceTree = "<group>"; };
 		DEB12EBA19A37DA4009D47CA /* target.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = target.jpg; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		DEEF52AB1A0E1C7000FC9894 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
-=======
 		E3293BBE1A1A1A9B0097011A /* fusuma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fusuma.png; sourceTree = "<group>"; };
 		E3293BBF1A1A1A9B0097011A /* hitotsume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hitotsume.png; sourceTree = "<group>"; };
 		E3293BC01A1A1A9B0097011A /* ittan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ittan.png; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 		E3293BC51A1A1A9B0097011A /* nurari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nurari.png; sourceTree = "<group>"; };
 		E3293BC61A1A1A9B0097011A /* nurikabe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nurikabe.png; sourceTree = "<group>"; };
 		E3293BC71A1A1A9B0097011A /* sazae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sazae.png; sourceTree = "<group>"; };
->>>>>>> ba9f97d67a22a62b5c8aac0cce6dd0d1b381fdf7
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -96,6 +96,7 @@ void Wepon::setData()
     if( _weponType == weponType1 )
     {
         _power = 1;
+        _state = State::move;
     }
 }
 
@@ -106,5 +107,7 @@ void Wepon::hit()
     
     auto remove = RemoveSelf::create();
     runAction(remove);
+    
+    _state = State::hit;
 }
 

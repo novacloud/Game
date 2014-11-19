@@ -18,19 +18,19 @@
 enum kZOrder
 {
     kZOrderBackground,
-    kZOrderPlayer,
     kZOrderWepon,
     kZOrderEnemy,
-    kZOrderItem
+    kZOrderItem,
+    kZOrderScore
 };
 
 enum kTag
 {
     kTagBackgound,
-    kTagPlayer,
     kTagWepon,
     kTagEnemy,
-    kTagItem
+    kTagItem,
+    kTagScore
 };
 
 
@@ -38,11 +38,12 @@ class GameScene : public cocos2d::Layer
 {
 private:
     int _score;
+    float _updateTime;
     
     
 public:
-    float _updateTime;
-    PopData *popData;
+    PopData     *popData;
+    LabelTTF    *scoreLabel;
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

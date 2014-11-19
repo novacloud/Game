@@ -12,13 +12,13 @@ USING_NS_CC;
 
 PopData::PopData()
 {
-    popMax = 8;
+    popMax = 20;
     
     int time;
     
     for( int i = 0; i < popMax; i++ )
     {
-        time = rand() % 30;
+        time = rand() % 60;
 
         
         vecPopTime.push_back(time);

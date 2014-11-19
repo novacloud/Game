@@ -23,6 +23,12 @@ public:
         weponType2
     };
     
+    enum class State
+    {
+        move,
+        hit
+    };
+    
 private:
     WeponType   _weponType;
     
@@ -38,6 +44,7 @@ public:
     std::string getImageFileName();
     void hit();
     
+    CC_SYNTHESIZE_READONLY(State, _state, State);
     CC_SYNTHESIZE_READONLY(int, _power, Power);
 };
 

@@ -44,10 +44,17 @@ bool GameScene::init()
     auto _bg = LayerColor::create(Color4B::WHITE, visibleSize.width, visibleSize.height);
     this->addChild(_bg, 0);
     
+    // 背景
     auto spriteBackground = Sprite::create("background.png");
     spriteBackground->setPosition(Vec2(origin.x + visibleSize.width/2,
                                        origin.y + visibleSize.height/2));
-    this->addChild(spriteBackground, 0);
+    this->addChild(spriteBackground, kZOrderBackground, kTagBackgound);
+    
+    // スコア
+    scoreLabel = LabelTTF::create("0", "Arial", 40);
+    scoreLabel->setColor(Color3B::BLACK);
+    scoreLabel->setPosition(Vec2(visibleSize.width - 50, visibleSize.height - 50));
+    this->addChild(scoreLabel, kZOrderScore, kTagScore);
     
     // ステージを構成
     popData = new PopData();
@@ -55,8 +62,6 @@ bool GameScene::init()
     // プレイヤー初期化
     auto player = Player::getInstance();
     player->init(this);
-    
-    
     
     
     // タッチイベントの登録
@@ -131,6 +136,9 @@ void GameScene::update(float delta)
             auto wepon = (Wepon*)nodeWepon;
             auto weponRect = wepon->getBoundingBox();
             
+            if( wepon->getState() == Wepon::State::hit )
+                continue;
+            
             if( enemyRect.intersectsRect(weponRect))
             {
                 // 攻撃が当たった
@@ -139,8 +147,6 @@ void GameScene::update(float delta)
                 
                 if( enemy->getState() == Enemy::State::dead )
                     addScore( enemy->getScore() );
-                
-                log("score = %d", _score);
             }
         }
     }
@@ -165,7 +171,6 @@ void GameScene::createPopObject(float time)
         if( time > popData->getPopTime(i) )
         {
             // POP時刻になった
-            
             if( popData->getPopType(i) == 0 )
             {
                 // 敵POP
@@ -186,4 +191,7 @@ void GameScene::createPopObject(float time)
 void GameScene::addScore(int score)
 {
     _score += score;
+    
+    std::string strScore = std::to_string(_score);
+    scoreLabel->setString(strScore);
 }

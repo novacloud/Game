@@ -540,15 +540,15 @@
 		E3293BBD1A1A1A9B0097011A /* enemy */ = {
 			isa = PBXGroup;
 			children = (
-				E3293BBE1A1A1A9B0097011A /* fusuma.png */,
 				E3293BBF1A1A1A9B0097011A /* hitotsume.png */,
 				E3293BC01A1A1A9B0097011A /* ittan.png */,
+				E3293BC61A1A1A9B0097011A /* nurikabe.png */,
+				E3293BBE1A1A1A9B0097011A /* fusuma.png */,
 				E3293BC11A1A1A9B0097011A /* kappa.png */,
 				E3293BC21A1A1A9B0097011A /* karakasa.png */,
 				E3293BC31A1A1A9B0097011A /* medama.png */,
 				E3293BC41A1A1A9B0097011A /* nekomata.png */,
 				E3293BC51A1A1A9B0097011A /* nurari.png */,
-				E3293BC61A1A1A9B0097011A /* nurikabe.png */,
 				E3293BC71A1A1A9B0097011A /* sazae.png */,
 			);
 			path = enemy;

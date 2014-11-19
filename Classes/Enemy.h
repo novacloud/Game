@@ -19,7 +19,9 @@ public:
     enum EnemyType
     {
         enemyType1,
-        enemyType2
+        enemyType2,
+        enemyType3,
+        enemyType4
     };
     
     enum class State

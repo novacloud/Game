@@ -174,9 +174,10 @@ void GameScene::createPopObject(float time)
             if( popData->getPopType(i) == 0 )
             {
                 // 敵POP
-                auto enemy = Enemy::create( Enemy::enemyType1 );
+                auto enemy = Enemy::create( Enemy::EnemyType(rand() % 3) );
                 if( enemy )
                 {
+                    enemy->setScale(0.7); // 一時対応、画像サイズ考える
                     this->addChild(enemy, kZOrderEnemy, kTagEnemy);
                 }
                 

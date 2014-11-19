@@ -20,8 +20,7 @@ private:
     Player();
     static Player* singleton;
     
-    int     score;
-    int     life;
+    int     _life;
     
     Vector<Sprite *> vecWeponSprite;
     std::string weponImage;
@@ -36,6 +35,8 @@ public:
     void    reload();
     std::string getWeponImage();
     int     getWeponPower();
+    
+    void    addScore(int score);
 };
 
 #endif /* defined(__SimpleGame__Player__) */

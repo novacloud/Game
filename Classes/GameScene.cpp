@@ -83,7 +83,9 @@ bool GameScene::init()
     };
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
-    updateTime = 0;
+    
+    _score = 0;
+    _updateTime = 0;
     this->scheduleUpdate();
     
     return true;
@@ -92,31 +94,60 @@ bool GameScene::init()
 
 void GameScene::update(float delta)
 {
-    updateTime += delta;
+    _updateTime += delta;
     //log("time = %f", updateTime);
     
     // POP OBJECT作成
-    createPopObject(updateTime);
+    createPopObject(_updateTime);
     
     
     // Object動作
     Vector<Node*> children = getChildren();
+    Vector<Node*> enemies;
+    Vector<Node*> wepons;
     
     for( auto child: children )
     {
-        if( child->getTag() == kTagEnemy )
+        switch (child->getTag())
         {
-            
-        }
-        
-        if( child->getTag() == kTagWepon )
-        {
-            
+            case kTagEnemy: enemies.pushBack(child); break;
+            case kTagWepon: wepons.pushBack(child); break;
+            default:break;
         }
     }
+    
+    
+    // 当たり判定
+    for( auto nodeEnemy: enemies )
+    {
+        auto enemy = (Enemy*)nodeEnemy;
+        auto enemyRect = enemy->getBoundingBox();
+        
+        if( enemy->getState() == Enemy::State::dead )
+            continue;
+        
+        for( auto nodeWepon: wepons )
+        {
+            auto wepon = (Wepon*)nodeWepon;
+            auto weponRect = wepon->getBoundingBox();
+            
+            if( enemyRect.intersectsRect(weponRect))
+            {
+                // 攻撃が当たった
+                enemy->damage( wepon->getPower() );
+                wepon->hit();
+                
+                if( enemy->getState() == Enemy::State::dead )
+                    addScore( enemy->getScore() );
+                
+                log("score = %d", _score);
+            }
+        }
+    }
+    
    
-    // 
-    if( updateTime > 60 )
+    // 強制終了
+    if( _updateTime > 60 )
     {
         Director::getInstance()->replaceScene(TransitionCrossFade::create(1.0f, GameOverScene::createScene()));
     }
@@ -148,4 +179,11 @@ void GameScene::createPopObject(float time)
             }
         }
     }
+}
+
+
+
+void GameScene::addScore(int score)
+{
+    _score += score;
 }

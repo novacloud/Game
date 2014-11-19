@@ -28,8 +28,7 @@ Player* Player::getInstance()
 
 void Player::init(Layer *layer)
 {
-    score = 0;
-    life = 5;
+    _life = 5;
     weponImage = "bullet.png";
     weponPower = 1;
     weponMax = 5;

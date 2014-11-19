@@ -11,7 +11,7 @@
 USING_NS_CC;
 
 Enemy::Enemy(EnemyType type)
-: enemyType(type)
+: _enemyType(type)
 {
 }
 
@@ -43,7 +43,7 @@ bool Enemy::init()
 
 std::string Enemy::getImageFileName()
 {
-    if( enemyType == enemyType1 )
+    if( _enemyType == enemyType1 )
     {
         return "enemy.png";
     }
@@ -56,7 +56,7 @@ void Enemy::setInitPosision()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 posision;
     
-    if( enemyType == enemyType1 )
+    if( _enemyType == enemyType1 )
     {
         posision = Vec2( rand() % (int)visibleSize.width, visibleSize.height - 50 );
     }
@@ -69,7 +69,7 @@ void Enemy::setAction()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     
     //移動アクションを生成
-    if( enemyType == enemyType1 )
+    if( _enemyType == enemyType1 )
     {
         auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
         auto remove = RemoveSelf::create();
@@ -81,8 +81,33 @@ void Enemy::setAction()
 
 void Enemy::setData()
 {
-    if( enemyType == enemyType1 )
+    if( _enemyType == enemyType1 )
     {
-        life = 2;
+        _life = 2;
+        _score = 100;
+        _state = State::move;
+    }
+}
+
+
+void Enemy::damage(int power)
+{
+    _life -= power;
+    
+    if(_life <= 0 )
+    {
+        // アクション停止
+        stopAllActions();
+        
+        auto remove = RemoveSelf::create();
+        runAction(remove);
+        
+        _state = State::dead;
+    }
+    else
+    {
+        // 点滅
+        auto blink = Blink::create(0.2, 2);
+        runAction(blink);
     }
 }

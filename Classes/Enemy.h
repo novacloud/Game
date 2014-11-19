@@ -22,18 +22,30 @@ public:
         enemyType2
     };
     
+    enum class State
+    {
+        move,
+        attack,
+        dead
+    };
+    
 private:
-    EnemyType enemyType;
-    int     life;
+    EnemyType   _enemyType;
+    int         _life;
+    
+    void setInitPosision();
+    void setAction();
+    void setData();
     
 public:
     Enemy(EnemyType type);
     static Enemy* create(EnemyType type);
     virtual bool init();
     std::string getImageFileName();
-    void setInitPosision();
-    void setAction();
-    void setData();
+    void damage(int power);
+    
+    CC_SYNTHESIZE_READONLY(int, _score, Score);
+    CC_SYNTHESIZE_READONLY(State, _state, State);
 };
 
 #endif /* defined(__SimpleGame__Enemy__) */

@@ -36,8 +36,12 @@ enum kTag
 
 class GameScene : public cocos2d::Layer
 {
+private:
+    int _score;
+    
+    
 public:
-    float updateTime;
+    float _updateTime;
     PopData *popData;
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -50,6 +54,7 @@ public:
     void update(float delta);
     
     void createPopObject(float time);
+    void addScore(int score);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);

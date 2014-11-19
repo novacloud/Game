@@ -24,8 +24,11 @@ public:
     };
     
 private:
-    WeponType   weponType;
-    int         power;
+    WeponType   _weponType;
+    
+    void setInitPosision();
+    void setAction(Vec2 touch);
+    void setData();
     
 public:
     
@@ -33,9 +36,9 @@ public:
     static Wepon* create(WeponType type, Vec2 touch);
     virtual bool init();
     std::string getImageFileName();
-    void setInitPosision();
-    void setAction(Vec2 touch);
-    void setData();
+    void hit();
+    
+    CC_SYNTHESIZE_READONLY(int, _power, Power);
 };
 
 #endif /* defined(__SimpleGame__Wepon__) */

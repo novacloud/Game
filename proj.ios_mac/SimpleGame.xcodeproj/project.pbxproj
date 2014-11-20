@@ -82,6 +82,8 @@
 		DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50DD1A04D47C009503C0 /* Wepon.cpp */; };
 		DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB12EBA19A37DA4009D47CA /* target.jpg */; };
 		DEEF52AC1A0E1C7000FC9894 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEEF52AB1A0E1C7000FC9894 /* title.jpg */; };
+		DEFCAC8D1A1DFB1F00B532F5 /* EnemyControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAC8B1A1DFB1F00B532F5 /* EnemyControl.cpp */; };
+		DEFCAC921A1E032E00B532F5 /* EnemyPopData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAC901A1E032E00B532F5 /* EnemyPopData.cpp */; };
 		E3293BC81A1A1A9B0097011A /* fusuma.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BBE1A1A1A9B0097011A /* fusuma.png */; };
 		E3293BC91A1A1A9B0097011A /* hitotsume.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BBF1A1A1A9B0097011A /* hitotsume.png */; };
 		E3293BCA1A1A1A9B0097011A /* ittan.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC01A1A1A9B0097011A /* ittan.png */; };
@@ -310,6 +312,10 @@
 		DEAE50DE1A04D47C009503C0 /* Wepon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wepon.h; path = ../Classes/Wepon.h; sourceTree = "<group>"; };
 		DEB12EBA19A37DA4009D47CA /* target.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = target.jpg; sourceTree = "<group>"; };
 		DEEF52AB1A0E1C7000FC9894 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
+		DEFCAC8B1A1DFB1F00B532F5 /* EnemyControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyControl.cpp; path = ../Classes/EnemyControl.cpp; sourceTree = "<group>"; };
+		DEFCAC8C1A1DFB1F00B532F5 /* EnemyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyControl.h; path = ../Classes/EnemyControl.h; sourceTree = "<group>"; };
+		DEFCAC901A1E032E00B532F5 /* EnemyPopData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyPopData.cpp; path = ../Classes/EnemyPopData.cpp; sourceTree = "<group>"; };
+		DEFCAC911A1E032E00B532F5 /* EnemyPopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyPopData.h; path = ../Classes/EnemyPopData.h; sourceTree = "<group>"; };
 		E3293BBE1A1A1A9B0097011A /* fusuma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fusuma.png; sourceTree = "<group>"; };
 		E3293BBF1A1A1A9B0097011A /* hitotsume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hitotsume.png; sourceTree = "<group>"; };
 		E3293BC01A1A1A9B0097011A /* ittan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ittan.png; sourceTree = "<group>"; };
@@ -407,6 +413,10 @@
 				DEAE50D819FD20AB009503C0 /* PopData.h */,
 				DEAE50DD1A04D47C009503C0 /* Wepon.cpp */,
 				DEAE50DE1A04D47C009503C0 /* Wepon.h */,
+				DEFCAC8B1A1DFB1F00B532F5 /* EnemyControl.cpp */,
+				DEFCAC8C1A1DFB1F00B532F5 /* EnemyControl.h */,
+				DEFCAC901A1E032E00B532F5 /* EnemyPopData.cpp */,
+				DEFCAC911A1E032E00B532F5 /* EnemyPopData.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -775,6 +785,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */,
+				DEFCAC8D1A1DFB1F00B532F5 /* EnemyControl.cpp in Sources */,
+				DEFCAC921A1E032E00B532F5 /* EnemyPopData.cpp in Sources */,
 				DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */,

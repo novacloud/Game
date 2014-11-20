@@ -56,13 +56,13 @@ bool GameScene::init()
     scoreLabel->setPosition(Vec2(visibleSize.width - 50, visibleSize.height - 50));
     this->addChild(scoreLabel, kZOrderScore, kTagScore);
     
-    // ステージを構成
-    popData = new PopData();
-
     // プレイヤー初期化
     auto player = Player::getInstance();
     player->init(this);
     
+    // 敵の出現順を構成
+    enemyControl = new EnemyControl();
+    enemyControl->init();
     
     // タッチイベントの登録
     auto listener = EventListenerTouchOneByOne::create();
@@ -103,7 +103,10 @@ void GameScene::update(float delta)
     //log("time = %f", updateTime);
     
     // POP OBJECT作成
-    createPopObject(_updateTime);
+    while( auto newEnemy = enemyControl->popEnemy(_updateTime) )
+    {
+        this->addChild(newEnemy, kZOrderEnemy, kTagEnemy);
+    }
     
     
     // Object動作
@@ -156,34 +159,6 @@ void GameScene::update(float delta)
     if( _updateTime > 60 )
     {
         Director::getInstance()->replaceScene(TransitionCrossFade::create(1.0f, GameOverScene::createScene()));
-    }
-    
-}
-
-
-void GameScene::createPopObject(float time)
-{
-    for( int i = 0; i < popData->getPopMax(); i++)
-    {
-        if( popData->getPopFlag(i) )
-            continue;
-        
-        if( time > popData->getPopTime(i) )
-        {
-            // POP時刻になった
-            if( popData->getPopType(i) == 0 )
-            {
-                // 敵POP
-                auto enemy = Enemy::create( Enemy::EnemyType(rand() % 3) );
-                if( enemy )
-                {
-                    enemy->setScale(0.7); // 一時対応、画像サイズ考える
-                    this->addChild(enemy, kZOrderEnemy, kTagEnemy);
-                }
-                
-                popData->setPopFlagTrue(i);
-            }
-        }
     }
 }
 

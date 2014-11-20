@@ -37,7 +37,6 @@ private:
     void setData();
     
 public:
-    
     Wepon(WeponType type);
     static Wepon* create(WeponType type, Vec2 touch);
     virtual bool init();

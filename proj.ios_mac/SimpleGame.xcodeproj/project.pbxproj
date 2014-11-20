@@ -78,7 +78,6 @@
 		DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5819D19ED200D3130F /* Player.cpp */; };
 		DE7B0C6019D1A75C00D3130F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */; };
 		DEAE50D619FCCD08009503C0 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAE50D519FCCD08009503C0 /* background.png */; };
-		DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50D719FD20AB009503C0 /* PopData.cpp */; };
 		DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAE50DD1A04D47C009503C0 /* Wepon.cpp */; };
 		DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEB12EBA19A37DA4009D47CA /* target.jpg */; };
 		DEEF52AC1A0E1C7000FC9894 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEEF52AB1A0E1C7000FC9894 /* title.jpg */; };
@@ -306,8 +305,6 @@
 		DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		DE7B0C5F19D1A75C00D3130F /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		DEAE50D519FCCD08009503C0 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		DEAE50D719FD20AB009503C0 /* PopData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopData.cpp; path = ../Classes/PopData.cpp; sourceTree = "<group>"; };
-		DEAE50D819FD20AB009503C0 /* PopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopData.h; path = ../Classes/PopData.h; sourceTree = "<group>"; };
 		DEAE50DD1A04D47C009503C0 /* Wepon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wepon.cpp; path = ../Classes/Wepon.cpp; sourceTree = "<group>"; };
 		DEAE50DE1A04D47C009503C0 /* Wepon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wepon.h; path = ../Classes/Wepon.h; sourceTree = "<group>"; };
 		DEB12EBA19A37DA4009D47CA /* target.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = target.jpg; sourceTree = "<group>"; };
@@ -409,8 +406,6 @@
 				DE7B0C5919D19ED200D3130F /* Player.h */,
 				DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */,
 				DE7B0C5F19D1A75C00D3130F /* GameScene.h */,
-				DEAE50D719FD20AB009503C0 /* PopData.cpp */,
-				DEAE50D819FD20AB009503C0 /* PopData.h */,
 				DEAE50DD1A04D47C009503C0 /* Wepon.cpp */,
 				DEAE50DE1A04D47C009503C0 /* Wepon.h */,
 				DEFCAC8B1A1DFB1F00B532F5 /* EnemyControl.cpp */,
@@ -787,7 +782,6 @@
 				DE7B0C5719CCD63500D3130F /* Enemy.cpp in Sources */,
 				DEFCAC8D1A1DFB1F00B532F5 /* EnemyControl.cpp in Sources */,
 				DEFCAC921A1E032E00B532F5 /* EnemyPopData.cpp in Sources */,
-				DEAE50D919FD20AB009503C0 /* PopData.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */,
 				DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #include "TitleScene.h"
-#include "GameScene.h"
+
 
 USING_NS_CC;
 
@@ -36,8 +36,13 @@ bool TitleScene::init()
         return false;
     }
     
+    // データベース初期化処理
+    auto database = new DatabaseControl();
+    database->init();
+    
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
     
     auto spriteBackground = Sprite::create("title.jpg");
     spriteBackground->setPosition(Vec2(origin.x + visibleSize.width/2,
@@ -69,7 +74,7 @@ bool TitleScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    label = LabelTTF::create("妖怪タッチ", "Arial", 40);
+    auto label = Label::createWithSystemFont("妖怪タッチ", "Ariel", 40);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
@@ -90,7 +95,6 @@ bool TitleScene::init()
         
         return true;
     };
-    
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     return true;

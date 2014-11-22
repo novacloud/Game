@@ -9,8 +9,7 @@
 #ifndef __SimpleGame__Player__
 #define __SimpleGame__Player__
 
-#include <iostream>
-#include <cocos2d.h>
+#include "cocos2d.h"
 
 USING_NS_CC;
 

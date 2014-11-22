@@ -18,7 +18,6 @@
 		1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB09180E9839004C840B /* libcocos2dx-extensions iOS.a */; };
 		1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0F180E9839004C840B /* libCocosDenshion iOS.a */; };
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B916D35E4900DB1158 /* CloseNormal.png */; };
 		1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
@@ -36,7 +35,6 @@
 		5087E75417EB910900C73F5D /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		5087E75517EB910900C73F5D /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
 		5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5087E76517EB910900C73F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		5087E76717EB910900C73F5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -83,6 +81,9 @@
 		DEEF52AC1A0E1C7000FC9894 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEEF52AB1A0E1C7000FC9894 /* title.jpg */; };
 		DEFCAC8D1A1DFB1F00B532F5 /* EnemyControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAC8B1A1DFB1F00B532F5 /* EnemyControl.cpp */; };
 		DEFCAC921A1E032E00B532F5 /* EnemyPopData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAC901A1E032E00B532F5 /* EnemyPopData.cpp */; };
+		DEFCAC951A1F63D600B532F5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCAC941A1F63D600B532F5 /* libsqlite3.0.dylib */; };
+		DEFCAC9A1A207CB700B532F5 /* DatabaseControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAC981A207CB700B532F5 /* DatabaseControl.cpp */; };
+		DEFCAC9D1A207F3C00B532F5 /* gamedata.db in Resources */ = {isa = PBXBuildFile; fileRef = DEFCAC9C1A207F3C00B532F5 /* gamedata.db */; };
 		E3293BC81A1A1A9B0097011A /* fusuma.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BBE1A1A1A9B0097011A /* fusuma.png */; };
 		E3293BC91A1A1A9B0097011A /* hitotsume.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BBF1A1A1A9B0097011A /* hitotsume.png */; };
 		E3293BCA1A1A1A9B0097011A /* ittan.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC01A1A1A9B0097011A /* ittan.png */; };
@@ -243,8 +244,6 @@
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8B416D35DE700DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1AFAF8B916D35E4900DB1158 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -313,6 +312,10 @@
 		DEFCAC8C1A1DFB1F00B532F5 /* EnemyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyControl.h; path = ../Classes/EnemyControl.h; sourceTree = "<group>"; };
 		DEFCAC901A1E032E00B532F5 /* EnemyPopData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyPopData.cpp; path = ../Classes/EnemyPopData.cpp; sourceTree = "<group>"; };
 		DEFCAC911A1E032E00B532F5 /* EnemyPopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyPopData.h; path = ../Classes/EnemyPopData.h; sourceTree = "<group>"; };
+		DEFCAC941A1F63D600B532F5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/usr/lib/libsqlite3.0.dylib; sourceTree = DEVELOPER_DIR; };
+		DEFCAC981A207CB700B532F5 /* DatabaseControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DatabaseControl.cpp; path = ../Classes/DatabaseControl.cpp; sourceTree = "<group>"; };
+		DEFCAC991A207CB700B532F5 /* DatabaseControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseControl.h; path = ../Classes/DatabaseControl.h; sourceTree = "<group>"; };
+		DEFCAC9C1A207F3C00B532F5 /* gamedata.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gamedata.db; sourceTree = "<group>"; };
 		E3293BBE1A1A1A9B0097011A /* fusuma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fusuma.png; sourceTree = "<group>"; };
 		E3293BBF1A1A1A9B0097011A /* hitotsume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hitotsume.png; sourceTree = "<group>"; };
 		E3293BC01A1A1A9B0097011A /* ittan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ittan.png; sourceTree = "<group>"; };
@@ -330,6 +333,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFCAC951A1F63D600B532F5 /* libsqlite3.0.dylib in Frameworks */,
 				1AC6FB2E180E99EB004C840B /* libbox2d iOS.a in Frameworks */,
 				1AC6FB2F180E99EB004C840B /* libchipmunk iOS.a in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2dx iOS.a in Frameworks */,
@@ -392,22 +396,22 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DE7B0C5319C8585A00D3130F /* TitleScene.cpp */,
-				DE7B0C5219C8585300D3130F /* TitleScene.h */,
-				DE7B0C5119C8584900D3130F /* GameOverScene.h */,
-				DE7B0C4D19C8583F00D3130F /* GameOverScene.cpp */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
-				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
-				DE7B0C5519CCD63500D3130F /* Enemy.cpp */,
-				DE7B0C5619CCD63500D3130F /* Enemy.h */,
-				DE7B0C5819D19ED200D3130F /* Player.cpp */,
-				DE7B0C5919D19ED200D3130F /* Player.h */,
+				DE7B0C5319C8585A00D3130F /* TitleScene.cpp */,
+				DE7B0C5219C8585300D3130F /* TitleScene.h */,
 				DE7B0C5E19D1A75C00D3130F /* GameScene.cpp */,
 				DE7B0C5F19D1A75C00D3130F /* GameScene.h */,
+				DE7B0C4D19C8583F00D3130F /* GameOverScene.cpp */,
+				DE7B0C5119C8584900D3130F /* GameOverScene.h */,
+				DEFCAC981A207CB700B532F5 /* DatabaseControl.cpp */,
+				DEFCAC991A207CB700B532F5 /* DatabaseControl.h */,
+				DE7B0C5819D19ED200D3130F /* Player.cpp */,
+				DE7B0C5919D19ED200D3130F /* Player.h */,
 				DEAE50DD1A04D47C009503C0 /* Wepon.cpp */,
 				DEAE50DE1A04D47C009503C0 /* Wepon.h */,
+				DE7B0C5519CCD63500D3130F /* Enemy.cpp */,
+				DE7B0C5619CCD63500D3130F /* Enemy.h */,
 				DEFCAC8B1A1DFB1F00B532F5 /* EnemyControl.cpp */,
 				DEFCAC8C1A1DFB1F00B532F5 /* EnemyControl.h */,
 				DEFCAC901A1E032E00B532F5 /* EnemyPopData.cpp */,
@@ -460,6 +464,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEFCAC941A1F63D600B532F5 /* libsqlite3.0.dylib */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
 				503AE11A17EB9C5A00D1A890 /* IOKit.framework */,
 				503AE11117EB99EE00D1A890 /* libcurl.dylib */,
@@ -527,6 +532,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DEFCAC9B1A207F3C00B532F5 /* database */,
 				DEEF52AB1A0E1C7000FC9894 /* title.jpg */,
 				E3293BBD1A1A1A9B0097011A /* enemy */,
 				DEAE50D519FCCD08009503C0 /* background.png */,
@@ -540,6 +546,14 @@
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		DEFCAC9B1A207F3C00B532F5 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				DEFCAC9C1A207F3C00B532F5 /* gamedata.db */,
+			);
+			path = database;
 			sourceTree = "<group>";
 		};
 		E3293BBD1A1A1A9B0097011A /* enemy */ = {
@@ -754,6 +768,7 @@
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				E3293BD01A1A1A9B0097011A /* nurikabe.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				DEFCAC9D1A207F3C00B532F5 /* gamedata.db in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				E3293BCB1A1A1A9B0097011A /* kappa.png in Resources */,
 				E3293BC91A1A1A9B0097011A /* hitotsume.png in Resources */,
@@ -785,12 +800,12 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DE7B0C5A19D19ED200D3130F /* Player.cpp in Sources */,
 				DEAE50DF1A04D47C009503C0 /* Wepon.cpp in Sources */,
+				DEFCAC9A1A207CB700B532F5 /* DatabaseControl.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				DE7B0C4E19C8583F00D3130F /* GameOverScene.cpp in Sources */,
 				DE7B0C6019D1A75C00D3130F /* GameScene.cpp in Sources */,
-				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				DE7B0C5419C8585A00D3130F /* TitleScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,7 +815,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
-				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 #ifndef __SimpleGame__Enemy__
 #define __SimpleGame__Enemy__
 
-#include <cocos2d.h>
+#include "cocos2d.h"
 
 USING_NS_CC;
 

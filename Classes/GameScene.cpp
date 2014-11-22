@@ -7,9 +7,7 @@
 //
 
 #include "GameScene.h"
-#include "GameOverScene.h"
-#include "Enemy.h"
-#include "Wepon.h"
+
 
 USING_NS_CC;
 
@@ -51,7 +49,7 @@ bool GameScene::init()
     this->addChild(spriteBackground, kZOrderBackground, kTagBackgound);
     
     // スコア
-    scoreLabel = LabelTTF::create("0", "Arial", 40);
+    scoreLabel = Label::createWithSystemFont("0", "Ariel", 40);
     scoreLabel->setColor(Color3B::BLACK);
     scoreLabel->setPosition(Vec2(visibleSize.width - 50, visibleSize.height - 50));
     this->addChild(scoreLabel, kZOrderScore, kTagScore);
@@ -156,9 +154,19 @@ void GameScene::update(float delta)
     
    
     // 強制終了
-    if( _updateTime > 60 )
+    if( _updateTime > 20 )
     {
+        auto database = new DatabaseControl();
+        if( database->open() )
+        {
+            database->insertRecord(_score);
+            database->close();
+        }
+        
         Director::getInstance()->replaceScene(TransitionCrossFade::create(1.0f, GameOverScene::createScene()));
+        
+        // スケジュール停止
+        this->unscheduleUpdate();
     }
 }
 

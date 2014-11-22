@@ -9,7 +9,7 @@
 #ifndef __SimpleGame__EnemyPopData__
 #define __SimpleGame__EnemyPopData__
 
-#include <cocos2d.h>
+#include "cocos2d.h"
 #include "Enemy.h"
 
 class EnemyPopData

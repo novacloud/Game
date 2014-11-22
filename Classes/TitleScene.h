@@ -10,19 +10,14 @@
 #define __SimpleGame__TitleScene__
 
 #include "cocos2d.h"
+#include "GameScene.h"
+#include "DatabaseControl.h"
 
 USING_NS_CC;
 
 class TitleScene : public cocos2d::Layer
 {
 public:
-    LabelTTF *label;
-    
-    int score = 0;
-    
-    int moveX = 10;
-    int moveY = 10;
-    
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
     
@@ -31,6 +26,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+    
     
     // implement the "static create()" method manually
     CREATE_FUNC(TitleScene);

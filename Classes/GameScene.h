@@ -13,7 +13,9 @@
 #include "GameOverScene.h"
 #include "Player.h"
 #include "EnemyControl.h"
-
+#include "Enemy.h"
+#include "Wepon.h"
+#include "DatabaseControl.h"
 
 enum kZOrder
 {
@@ -43,7 +45,7 @@ private:
     
 public:
     EnemyControl    *enemyControl;
-    LabelTTF        *scoreLabel;
+    Label           *scoreLabel;
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

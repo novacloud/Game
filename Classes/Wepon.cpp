@@ -6,7 +6,6 @@
 //
 //
 
-#include <math.h>
 #include "Wepon.h"
 
 USING_NS_CC;

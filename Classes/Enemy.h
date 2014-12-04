@@ -18,10 +18,11 @@ class Enemy : public Sprite
 public:
     enum EnemyType
     {
-        enemyType1,
-        enemyType2,
-        enemyType3,
-        enemyType4
+        hitotsume,
+        ittan,
+        nurikabe,
+        medama,
+        fusuma
     };
     
     enum class State
@@ -38,6 +39,7 @@ private:
     void setInitPosision();
     void setAction();
     void setData();
+    void setAttack();
     
 public:
     Enemy(EnemyType type);

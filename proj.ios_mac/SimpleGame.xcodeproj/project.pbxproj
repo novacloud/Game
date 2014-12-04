@@ -94,6 +94,8 @@
 		E3293BCF1A1A1A9B0097011A /* nurari.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC51A1A1A9B0097011A /* nurari.png */; };
 		E3293BD01A1A1A9B0097011A /* nurikabe.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC61A1A1A9B0097011A /* nurikabe.png */; };
 		E3293BD11A1A1A9B0097011A /* sazae.png in Resources */ = {isa = PBXBuildFile; fileRef = E3293BC71A1A1A9B0097011A /* sazae.png */; };
+		E3A5CE061A3063A600A6B49C /* main_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A5CE051A3063A600A6B49C /* main_2.png */; };
+		E3A5CE0A1A30657500A6B49C /* life.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A5CE091A30657500A6B49C /* life.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,6 +328,8 @@
 		E3293BC51A1A1A9B0097011A /* nurari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nurari.png; sourceTree = "<group>"; };
 		E3293BC61A1A1A9B0097011A /* nurikabe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nurikabe.png; sourceTree = "<group>"; };
 		E3293BC71A1A1A9B0097011A /* sazae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sazae.png; sourceTree = "<group>"; };
+		E3A5CE051A3063A600A6B49C /* main_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_2.png; sourceTree = "<group>"; };
+		E3A5CE091A30657500A6B49C /* life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -534,6 +538,7 @@
 			children = (
 				DEFCAC9B1A207F3C00B532F5 /* database */,
 				DEEF52AB1A0E1C7000FC9894 /* title.jpg */,
+				E3A5CE051A3063A600A6B49C /* main_2.png */,
 				E3293BBD1A1A1A9B0097011A /* enemy */,
 				DEAE50D519FCCD08009503C0 /* background.png */,
 				DE5EB0FA19DFE9DA009067EF /* bullet.png */,
@@ -552,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				DEFCAC9C1A207F3C00B532F5 /* gamedata.db */,
+				E3A5CE091A30657500A6B49C /* life.png */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -744,6 +750,7 @@
 				DE5EB0FE19DFE9DA009067EF /* enemy.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				E3A5CE061A3063A600A6B49C /* main_2.png in Resources */,
 				DE5EB0FF19DFE9DA009067EF /* haka.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				DEB12EBB19A37DA4009D47CA /* target.jpg in Resources */,
@@ -767,6 +774,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				E3293BD01A1A1A9B0097011A /* nurikabe.png in Resources */,
+				E3A5CE0A1A30657500A6B49C /* life.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				DEFCAC9D1A207F3C00B532F5 /* gamedata.db in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,

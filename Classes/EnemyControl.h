@@ -19,11 +19,18 @@ class EnemyControl
 {
 private:
     std::vector<EnemyPopData *> vecEnemyPopData;
+    int enemyNum;
+    int enemyPattern;
+    
+    void makeEnemy();
+    
     
 public:
     EnemyControl();
     void init();
     Enemy* popEnemy(float time);
+    void updateEnemyPattern();
+    
 };
 
 

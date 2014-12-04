@@ -154,7 +154,7 @@ void GameScene::update(float delta)
     
    
     // 強制終了
-    if( _updateTime > 20 )
+    if( _updateTime > 60 )
     {
         auto database = new DatabaseControl();
         if( database->open() )
@@ -168,6 +168,15 @@ void GameScene::update(float delta)
         // スケジュール停止
         this->unscheduleUpdate();
     }
+    
+    // 敵出現パターンを変更
+    if( int(_updateTime) > 20 )
+    {
+        log("time = %f", _updateTime);
+        enemyControl->updateEnemyPattern();
+        _updateTime = 0;
+    }
+
 }
 
 

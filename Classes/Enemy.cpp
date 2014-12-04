@@ -45,12 +45,14 @@ std::string Enemy::getImageFileName()
 {
     switch( _enemyType )
     {
-        case 0:
+        case hitotsume:
             return "hitotsume.png";
-        case 1:
+        case ittan:
             return "ittan.png";
-        case 2:
+        case nurikabe:
             return "nurikabe.png";
+        case medama:
+            return "medama.png";
         default:
             return "enemy.png";
     }
@@ -63,10 +65,16 @@ void Enemy::setInitPosision()
     
     switch( _enemyType )
     {
-        case 0:
+        case hitotsume:
             posision = Vec2( rand() % (int)visibleSize.width, visibleSize.height - 50 );
             break;
-        case 1:
+        case ittan:
+            posision = Vec2( rand() % (int)visibleSize.width, visibleSize.height - 50 );
+            break;
+        case nurikabe:
+            posision = Vec2( rand() % (int)visibleSize.width, visibleSize.height - 50 );
+            break;
+        case medama:
             posision = Vec2( rand() % (int)visibleSize.width, visibleSize.height - 50 );
             break;
         default:
@@ -83,70 +91,88 @@ void Enemy::setAction()
 
     
     //移動アクションを生成
-    if( _enemyType == enemyType1 )       // ひとつめこぞう
+    switch( _enemyType )
     {
-        auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
-        auto remove = RemoveSelf::create();
-        auto seq = Sequence::create(move, remove, NULL);
-        runAction(seq);
-    
-    }
-    else if( _enemyType == enemyType2 )  // いったんもめん
-    {
-        auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
+        case hitotsume:
+        {
+            auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
+            auto remove = RemoveSelf::create();
+            auto seq = Sequence::create(move, remove, NULL);
+            runAction(seq);
+            break;
+        }
+        case ittan:
+        {
+            auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
         
-        // ジグザグ動作
-        auto left = MoveBy::create(5, Vec2( -visibleSize.width / 2, 0));
-        auto right = MoveBy::create(5, Vec2( visibleSize.width / 2, 0));
-        auto widthSeq = Sequence::create(left, right, NULL);
-        auto repeat = Repeat::create(widthSeq, 2);
+            // ジグザグ動作
+            auto left = MoveBy::create(5, Vec2( -visibleSize.width / 2, 0));
+            auto right = MoveBy::create(5, Vec2( visibleSize.width / 2, 0));
+            auto widthSeq = Sequence::create(left, right, NULL);
+            auto repeat = Repeat::create(widthSeq, 2);
 
-        auto spawn = Spawn::create(repeat, move, NULL);
-        auto remove = RemoveSelf::create();
-        auto seq = Sequence::create(spawn, remove, NULL);
-        runAction(seq);
+            auto spawn = Spawn::create(repeat, move, NULL);
+            auto remove = RemoveSelf::create();
+            auto seq = Sequence::create(spawn, remove, NULL);
+            runAction(seq);
+            break;
+        }
+        case nurikabe:
+        {
+            // 動いて止まるを繰り返す
+            auto move = MoveBy::create(5, Vec2( 0, -visibleSize.height / 4));
+            auto delay = DelayTime::create(2.0f);
+            auto moveDelay = Sequence::create(move, delay, NULL);
+            auto repeat = Repeat::create(moveDelay, 4);
+
+            auto remove = RemoveSelf::create();
+            auto seq = Sequence::create(repeat, remove, NULL);
+            runAction(seq);
+            break;
+        }
+        case medama:
+        {
+            auto delay = DelayTime::create(2.0f);
+            auto move = MoveTo::create(10, Vec2( getPositionX(), visibleSize.height * -0.1));
+            auto delayMove = Sequence::create(delay, move, NULL);
+            auto remove = RemoveSelf::create();
+            auto seq = Sequence::create(delayMove, remove, NULL);
+            runAction(seq);
+            break;
+        }
+        
+        default:
+        {
+            auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
+            auto remove = RemoveSelf::create();
+            auto seq = Sequence::create(move, remove, NULL);
+            runAction(seq);
+        }
     }
-    else if ( _enemyType == enemyType3 ) // ぬりかべ
-    {
-        // 動いて止まるを繰り返す
-        auto move = MoveBy::create(5, Vec2( 0, -visibleSize.height / 4));
-        auto delay = DelayTime::create(2.0f);
-        auto moveDelay = Sequence::create(move, delay, NULL);
-        auto repeat = Repeat::create(moveDelay, 4);
-
-        auto remove = RemoveSelf::create();
-        auto seq = Sequence::create(repeat, remove, NULL);
-        runAction(seq);
-    }
-
-    else
-    {
-        auto move = MoveTo::create(20, Vec2( getPositionX(), visibleSize.height * -0.1));
-        auto remove = RemoveSelf::create();
-        auto seq = Sequence::create(move, remove, NULL);
-        runAction(seq);
-    }
-
-    
 }
 
 void Enemy::setData()
 {
     switch( _enemyType )
     {
-        case 0:
+        case hitotsume:
             _life = 2;
             _score = 100;
             _state = State::move;
             break;
-        case 1:
+        case ittan:
             _life = 3;
             _score = 150;
             _state = State::move;
             break;
-        case 2:
+        case nurikabe:
             _life = 4;
             _score = 200;
+            _state = State::move;
+            break;
+        case medama:
+            _life = 1;
+            _score = 100;
             _state = State::move;
             break;
         default:

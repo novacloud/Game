@@ -44,10 +44,11 @@ bool TitleScene::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
     
-    auto spriteBackground = Sprite::create("title.jpg");
+//    auto spriteBackground = Sprite::create("title.jpg");
+    auto spriteBackground = Sprite::create("main_2.png");
     spriteBackground->setPosition(Vec2(origin.x + visibleSize.width/2,
                                        origin.y + visibleSize.height/2));
-    spriteBackground->setScale( 0.2f, 0.2f );
+    spriteBackground->setScale( 1.55f, 1.55f );
     this->addChild(spriteBackground, 0);
     
     /////////////////////////////

@@ -16,16 +16,9 @@ EnemyControl::EnemyControl()
 
 void EnemyControl::init()
 {
-    for( int i = 0; i < 20; i++ )
-    {
-        auto enemyPopData = new EnemyPopData();
-        
-        enemyPopData->setPopTime(rand() % 60);
-        enemyPopData->setEnemyType(Enemy::EnemyType(rand() % 3));
-        enemyPopData->setPopFlag(false);
-        
-        vecEnemyPopData.push_back(enemyPopData);
-    }
+    enemyNum = 5;
+    enemyPattern = 1;
+    makeEnemy();
 }
 
 Enemy* EnemyControl::popEnemy(float time)
@@ -53,4 +46,27 @@ Enemy* EnemyControl::popEnemy(float time)
     }
     
     return NULL;
+}
+
+void EnemyControl::makeEnemy()
+{
+    srand((unsigned int)time(NULL));
+    for( int i = 0; i < enemyNum; i++ )
+    {
+        auto enemyPopData = new EnemyPopData();
+        
+        enemyPopData->setPopTime(rand() % 20);
+        enemyPopData->setEnemyType(Enemy::EnemyType(rand() % enemyPattern));
+        enemyPopData->setPopFlag(false);
+        
+        vecEnemyPopData.push_back(enemyPopData);
+    }
+   
+}
+
+void EnemyControl::updateEnemyPattern()
+{
+    log("pattern = %d", enemyPattern);
+    enemyPattern++;
+    makeEnemy();
 }

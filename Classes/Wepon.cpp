@@ -21,6 +21,7 @@ Wepon* Wepon::create(WeponType type, Vec2 touch)
     
     if( wepon && wepon->init() )
     {
+        wepon->setScale(0.3f, 0.3f);
         wepon->setInitPosision();
         wepon->setAction(touch);
         wepon->setData();
@@ -46,10 +47,10 @@ std::string Wepon::getImageFileName()
 {
     if( _weponType == weponType1 )
     {
-        return "bullet.png";
+        return "bullet_2.png";
     }
     
-    return "bullet.png";
+    return "bullet_2.png";
 }
 
 void Wepon::setInitPosision()
@@ -73,18 +74,21 @@ void Wepon::setAction(Vec2 touch)
     if( _weponType == weponType1 )
     {
         // 移動距離算出（画面下部中央から画面上部角まで）
-        auto range = sqrtf( powf(visibleSize.width / 2, 2) + powf(visibleSize.height, 2) );
+        auto range = sqrtf( powf(visibleSize.width / 2, 2) + powf(visibleSize.height+10, 2) );
 
         // タッチ位置から角度算出
         auto angle = atan2f( touch.y, touch.x - visibleSize.width/2 );
-     
+
         // x,y方向のそれぞれの移動距離算出
         auto rangeX = range * cosf( angle );
         auto rangeY = range * sinf( angle );
+        
+        // 画像の角度調整
+        auto rotate = RotateTo::create(0, 90-(angle * 180 / M_PI));
      
         auto move = MoveTo::create(1.0f, Vec2(rangeX + visibleSize.width/2, rangeY));
         auto remove = RemoveSelf::create();
-        auto seq = Sequence::create(move, remove, NULL);
+        auto seq = Sequence::create(rotate, move, remove, NULL);
      
         runAction(seq);
      }

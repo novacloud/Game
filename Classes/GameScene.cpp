@@ -43,7 +43,8 @@ bool GameScene::init()
     this->addChild(_bg, 0);
     
     // 背景
-    auto spriteBackground = Sprite::create("background.png");
+    auto spriteBackground = Sprite::create("background_2.png");
+    spriteBackground->setScale(1.55f, 1.55f);
     spriteBackground->setPosition(Vec2(origin.x + visibleSize.width/2,
                                        origin.y + visibleSize.height/2));
     this->addChild(spriteBackground, kZOrderBackground, kTagBackgound);
@@ -170,12 +171,12 @@ void GameScene::update(float delta)
     }
     
     // 敵出現パターンを変更
-    if( int(_updateTime) > 20 )
-    {
-        log("time = %f", _updateTime);
-        enemyControl->updateEnemyPattern();
-        _updateTime = 0;
-    }
+//    if( int(_updateTime) > 20 )
+//    {
+//        log("time = %f", _updateTime);
+//        enemyControl->updateEnemyPattern();
+//        _updateTime = 0;
+//    }
 
 }
 

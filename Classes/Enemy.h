@@ -18,7 +18,7 @@ class Enemy : public Sprite
 public:
     enum EnemyType
     {
-        hitotsume,
+        karakasa,
         ittan,
         nurikabe,
         medama,
@@ -47,6 +47,7 @@ public:
     virtual bool init();
     std::string getImageFileName();
     void damage(int power);
+    int getEnemyType();
     
     CC_SYNTHESIZE_READONLY(int, _score, Score);
     CC_SYNTHESIZE_READONLY(State, _state, State);

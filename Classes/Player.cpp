@@ -29,7 +29,7 @@ Player* Player::getInstance()
 void Player::init(Layer *layer)
 {
     _life = 5;
-    weponImage = "bullet.png";
+    weponImage = "bullet_2.png";
     weponPower = 1;
     weponMax = 5;
     weponRest = 5;
@@ -38,7 +38,7 @@ void Player::init(Layer *layer)
     Size visibleSize = Director::getInstance()->getVisibleSize();
     
     // 墓表示
-    auto spriteReload = Sprite::create("haka.png");
+    auto spriteReload = Sprite::create("haka_2.png");
     spriteReload->setPosition(Vec2( visibleSize.width - spriteReload->getContentSize().width/2 - 10,
                            spriteReload->getContentSize().height/2 + 10));
     layer->addChild(spriteReload, 1);
@@ -66,13 +66,15 @@ void Player::init(Layer *layer)
     // 武器表示
     for( int i = 0; i < weponRest; i++ )
     {
+        float scale = 0.2f;
         auto sprite = Sprite::create(weponImage);
-        auto width = sprite->getContentSize().width;
-        auto height = sprite->getContentSize().height;
+        auto width = sprite->getContentSize().width * scale;
+        auto height = sprite->getContentSize().height * scale;
         
+        sprite->setScale(scale, scale);
         sprite->setPosition(Vec2((width * i + width/2 + 10), height/2 + 10 ));
         layer->addChild(sprite);
-        
+
         vecWeponSprite.pushBack(sprite);
     }
 }

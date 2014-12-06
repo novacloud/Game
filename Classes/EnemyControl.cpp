@@ -16,7 +16,7 @@ EnemyControl::EnemyControl()
 
 void EnemyControl::init()
 {
-    enemyNum = 5;
+    enemyNum = 45;
     enemyPattern = 1;
     makeEnemy();
 }
@@ -36,7 +36,16 @@ Enemy* EnemyControl::popEnemy(float time)
             auto enemy = Enemy::create( enemyPopData->getEnemyType() );
             if( enemy )
             {
-                enemy->setScale(0.7); // 一時対応、画像サイズ考える
+                // めだまはサイズを小さくする
+                if(enemy->getEnemyType() == Enemy::EnemyType::medama)
+                {
+                    enemy->setScale(0.3f);
+                }
+                else
+                {
+                    enemy->setScale(0.5f);
+                }
+                
             }
                 
             enemyPopData->setPopFlag(true);
@@ -55,8 +64,10 @@ void EnemyControl::makeEnemy()
     {
         auto enemyPopData = new EnemyPopData();
         
-        enemyPopData->setPopTime(rand() % 20);
-        enemyPopData->setEnemyType(Enemy::EnemyType(rand() % enemyPattern));
+        enemyPopData->setPopTime(rand() % 55);
+//        enemyPopData->setEnemyType(Enemy::EnemyType(rand() % enemyPattern));
+        // 敵の出現確率は同じ(要変更)
+        enemyPopData->setEnemyType(Enemy::EnemyType(rand() % 4));
         enemyPopData->setPopFlag(false);
         
         vecEnemyPopData.push_back(enemyPopData);
